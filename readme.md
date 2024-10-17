@@ -1,0 +1,2 @@
+﻿1. Make sure to add a connecting string to your local secrets, you may need to enable secret storage. See this [link](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-8.0&tabs=windows).
+1. 
