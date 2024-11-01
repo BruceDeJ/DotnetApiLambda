@@ -27,3 +27,24 @@ Then paste in the below (replace YOURPASSWORD with the password you specified fo
 ## AWS CLI
 
 In order to deploy your lamba application you will need to setup the AWS cli. See this [link](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
+
+## .NET CLI Extension
+
+To deploy your application to an AWS Lambda you will need to install the .NET CLI Extension Amazon.Lambda.Tools, run the following command to do this: "dotnet tool install -g Amazon.Lambda.Tools"
+
+## Deploying the Dotnet application to AWS CLI
+
+Follow the below steps:
+1. Open a command prompt window, and navigate to the folder containing your Visual Studio .NET Core Lambda project.
+2. If prompted, enter the AWS Region (the Region to which your Lambda function will be deployed).
+3. Enter "dotnet lambda deploy-function" and press enter.
+4. When prompted, enter in the runtime, for our particular application it is "dotnet8"
+5. When prompted, enter the name of the function to deploy. It can be a new name or the name of an existing function.
+6. When prompted, select an IAM role, you can either use an existing one or create a new one. We will create a new one, select the option that says "Create new IAM Role"
+    - First you will need to enter in a name for your role, you can enter in any name
+    - Then you will be prompted to select a IAM policy, I suggest using "AWSLambdaBasicExecutionRole"
+    - This should complete once its done propagating the role to all regions
+7. When prompted, enter in the memory size, our application is basic so 512 MB should suffice, enter in "512" and press enter
+8. When prompted, enter in the timeout, I went with 5 seconds, enter in "5" and press enter
+9. When prompted, enter in the handler, this is the name of your assembly, in our case it's "ToDoAPI", after entering that in press enter
+10. On successful completion, the message New Lambda function created is displayed 
